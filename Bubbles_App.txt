@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bubbles App</title>
+<style>
+
+button {
+font-size: 20px;
+font-family: tahoma;
+border: solid;
+margin-left:77%;
+padding: 5px;
+box-shadow: 3px 3px 3px grey;
+}
+
+button:hover{
+ background-color: black;
+ color: white;
+ box-shadow: 3px 3px 3px black;
+}
+
+#dot1 {
+  height: 75px;
+  width: 75px;
+  background-color: yellow;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: black;
+  display: inline-block;
+  margin-left: 7%;
+}
+
+#arrow1 {
+  font-size : 65px;
+  //margin-left: 4.7%;
+  margin-left: 50%;
+  position: absolute;
+}
+#arrow2 {
+  font-size : 65px;
+  //margin-left: 4.7%;
+  margin-left: 50%;
+  position: absolute;
+}
+#arrow3 {
+  font-size : 65px;
+  //margin-left: 4.7%;
+  margin-left: 50%;
+  position: absolute;
+}
+#arrow4 {
+  font-size : 65px;
+  //margin-left: 4.7%;
+  margin-left: 50%;
+  position: absolute;
+}
+
+#dot2 {
+  height: 75px;
+  width: 75px;
+  background-color: blue;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: black;
+  display: inline-block;
+  margin-left: 7%;
+}
+#dot3 {
+  height: 75px;
+  width: 75px;
+  background-color: red;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: black;
+  display: inline-block;
+  margin-left: 7%;
+}
+#dot4 {
+  height: 75px;
+  width: 75px;
+  background-color: green;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: black;
+  display: inline-block;
+  margin-left: 7%;
+}
+
+</style>
+</head>
+<body bgcolor=black>
+<p align="center" style="font-family:tahoma; font-size:35px; color:white;"><b>Bubbles App</b></p>
+<div style="background-color:silver;
+color:black;
+border-radius:20px;
+padding:auto;
+margin-left:250px;
+margin-right:250px;
+border-style: solid;
+border-color: orange;"><br><br>
+
+<div id="dot1" onclick="moveLeft1()">
+<div id="arrow1">&larr;</div>
+</div><br><br>
+
+<div id="dot2" onclick="moveLeft2()">
+<div id="arrow2">&larr;</div>
+</div><br><br>
+
+<div id="dot3" onclick="moveLeft3()">
+<div id="arrow3">&larr;</div>
+</div><br><br>
+
+<div id="dot4" onclick="moveLeft4()">
+<div id="arrow4">&larr;</div>
+</div><br><br>
+
+</div><br>
+<button type="button" onclick="original()"><b>&nbspReset&nbsp</b></button>
+<script>
+
+function moveLeft1() {
+  let id = null;
+  const elem = document.getElementById("arrow1");   
+  var change = document.getElementById("dot1");
+  let pos = 370;
+  clearInterval(id);
+  id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 1065) {
+      clearInterval(id);
+      change.style.backgroundColor = "pink";
+    } else {
+      pos++; 
+      elem.style.right = pos + "px"; 
+      elem.style.leftt = pos + "px"; 
+    }
+  }
+}
+function moveLeft2() {
+  let id = null;
+  const elem = document.getElementById("arrow2");   
+  var change = document.getElementById("dot2");
+  let pos = 370;
+  clearInterval(id);
+  id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 1065) {
+      clearInterval(id);
+      change.style.backgroundColor = "white";
+    } else {
+      pos++; 
+      elem.style.right = pos + "px"; 
+      elem.style.leftt = pos + "px"; 
+    }
+  }
+}
+function moveLeft3() {
+  let id = null;
+  const elem = document.getElementById("arrow3");   
+  var change = document.getElementById("dot3");
+  let pos = 370;
+  clearInterval(id);
+  id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 1065) {
+      clearInterval(id);
+      change.style.backgroundColor = "orange";
+    } else {
+      pos++; 
+      elem.style.right = pos + "px"; 
+      elem.style.leftt = pos + "px"; 
+    }
+  }
+}
+function moveLeft4() {
+  let id = null;
+  const elem = document.getElementById("arrow4");   
+  var change = document.getElementById("dot4");
+  let pos = 370;
+  clearInterval(id);
+  id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 1065) {
+      clearInterval(id);
+      change.style.backgroundColor = "violet";
+    } else {
+      pos++; 
+      elem.style.right = pos + "px"; 
+      elem.style.leftt = pos + "px"; 
+    }
+  }
+}
+function original(){
+ var cir1 = document.getElementById("dot1");
+ var cir2 = document.getElementById("dot2");
+ var cir3 = document.getElementById("dot3");
+ var cir4 = document.getElementById("dot4");
+ 
+ cir1.style.backgroundColor = "yellow";
+ cir2.style.backgroundColor = "blue";
+ cir3.style.backgroundColor = "red";
+ cir4.style.backgroundColor = "green";
+
+ var arr1 = document.getElementById("arrow1");
+ var arr2 = document.getElementById("arrow2");
+ var arr3 = document.getElementById("arrow3");
+ var arr4 = document.getElementById("arrow4");
+
+ let pos = 21.66;
+ arr1.style.left = pos + "%";
+ arr2.style.left = pos + "%";
+ arr3.style.left = pos + "%";
+ arr4.style.left = pos + "%";
+}
+
+</script>
+</body>
+</html>
